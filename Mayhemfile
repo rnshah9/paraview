@@ -1,0 +1,12 @@
+project: paraview
+target: paraview
+image: ghcr.io/rnshah9/playground:paraview
+# testsuite:
+#   - file://VTK/Wrapping/Python/vtk.py
+#t
+cmds:
+  - cmd: /build/bin/pvtkpython
+    timeout: 3
+    env:
+      DISABLE_SMOKETEST: '1'
+    libfuzzer: false
